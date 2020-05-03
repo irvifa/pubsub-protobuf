@@ -1,6 +1,6 @@
 package com.github.irvifa.pubsubprotobuf;
 
-import static com.google.pubsub.v1.PubsubMessage.*;
+import static com.google.pubsub.v1.PubsubMessage.newBuilder;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;

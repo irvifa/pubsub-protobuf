@@ -49,8 +49,9 @@ public class PubsubProtobufPublisherFactory {
   }
 
   private String getEventName(Message event) {
-    Descriptors.FieldDescriptor eventNameFD = event.getDescriptorForType().findFieldByName(Constants.EVENT_NAME_FIELD);
-    String eventName = (String) event.getField(eventNameFD);
+    Descriptors.FieldDescriptor eventNameFileDescriptor = event.getDescriptorForType()
+        .findFieldByName(Constants.EVENT_NAME_FIELD);
+    String eventName = (String) event.getField(eventNameFileDescriptor);
     return eventName;
   }
 
@@ -59,8 +60,8 @@ public class PubsubProtobufPublisherFactory {
   }
 
   public static final class Builder {
-      String projectId;
-      String privateKeyBase64;
+    String projectId;
+    String privateKeyBase64;
 
     Builder(String projectId, String privateKeyBase64) {
       this.projectId = projectId;
